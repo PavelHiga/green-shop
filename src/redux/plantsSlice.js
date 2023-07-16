@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchPlants = createAsyncThunk('plants/fetchPlantsStatus', async (props) => {
     const { category, sort, order, search, priceA, priceB, sidebarCategory, sidebarCategory2 } = props
-    const res = await axios.get(`http://localhost:3000/plants?category=${category}&_sort=${sort}&_order=${order}&q=${search}${priceA}${priceB}${sidebarCategory}${sidebarCategory2}`)
+    const res = await axios.get(`https://project-data-xi.vercel.app/plants?category=${category}&_sort=${sort}&_order=${order}&q=${search}${priceA}${priceB}${sidebarCategory}${sidebarCategory2}`)
     return res.data
 })
 
