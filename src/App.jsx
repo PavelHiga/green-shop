@@ -6,7 +6,7 @@ import Layout from './pages/Layout/Layout'
 import { useDispatch, useSelector } from 'react-redux'
 import { categoriesArr } from './components/Categories/categoriesArr'
 import Cart from './pages/Cart/Cart'
-import ShopItems from './components/shopItems/ShopItems'
+import ShopItems from './components/ShopItems/ShopItems'
 import { fetchPlants } from './redux/plantsSlice'
 
 const App = () => {
