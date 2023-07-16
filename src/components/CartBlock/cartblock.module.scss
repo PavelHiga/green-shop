@@ -1,0 +1,41 @@
+.shop {
+    width: 100%;
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    .info {
+        display: flex;
+        padding: 20px 10px;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 790px) {
+    .shop {
+
+        .info {
+            padding: 10px 10px;
+        }
+        margin-bottom: 15px;
+        h1 {
+            font-size: 50px;
+        }
+
+    }
+}
+
+@media (max-width: 590px) {
+
+    .shop {
+        h1 {
+            font-size: 40px;
+        }
+    }
+}
