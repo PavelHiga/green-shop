@@ -5,7 +5,6 @@ import { cartSelector } from '../../redux/cartSlice'
 
 const Header = () => {
 
-
   const {cart} = useSelector(cartSelector)
   const totalCount = cart.reduce((sum, item) => sum + item.count, 0)
   
@@ -22,7 +21,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-    
   </>
   )
 }

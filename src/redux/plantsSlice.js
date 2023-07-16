@@ -1,14 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// асинхронный action
-
 export const fetchPlants = createAsyncThunk('plants/fetchPlantsStatus', async (props) => {
     const { category, sort, order, search, priceA, priceB, sidebarCategory, sidebarCategory2 } = props
     const res = await axios.get(`http://localhost:3000/plants?category=${category}&_sort=${sort}&_order=${order}&q=${search}${priceA}${priceB}${sidebarCategory}${sidebarCategory2}`)
     return res.data
-}
-)
+})
 
 const initialState = {
     plants: [],
@@ -16,7 +13,6 @@ const initialState = {
 }
 
 const plantsSlice = createSlice({
-
     name: 'plants',
     initialState,
     reducers: {
@@ -39,7 +35,6 @@ const plantsSlice = createSlice({
             state.status = 'error'
             state.plants = [];
         });
-
     }
 })
 

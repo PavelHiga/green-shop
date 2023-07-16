@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import style from './items.module.scss'
 import { setAddCart, setRemoveCart, setMinusCart } from '../../../redux/cartSlice'
 
@@ -18,8 +18,6 @@ const Items = ({ cart }) => {
         dispatch(setMinusCart(state))
         console.log(state)
     }
-
-    console.log(cart)
 
     return (
         <div className={style.items}>

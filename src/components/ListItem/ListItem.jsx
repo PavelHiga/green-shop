@@ -2,7 +2,6 @@ import style from './listitem.module.scss'
 
 const ListItem = ({ data }) => {
 
-
   return (
     <div className={style.wrapper}>
       <div className={style.item}>

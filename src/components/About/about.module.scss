@@ -32,7 +32,9 @@
 }
 
 @media (max-width: 790px) {
+
     .shop {
+
         .info {
             padding: 10px 10px;
         }
@@ -55,6 +57,7 @@
 }
 
 @media (max-width: 590px) {
+
     .shop {
 
         h1 {
@@ -73,6 +76,7 @@
 }
 
 @media (max-width: 375px) {
+
     .shop {
 
         h1 {
@@ -85,7 +89,7 @@
         }
 
         h2 {
-           display: none;
+            display: none;
         }
     }
 }

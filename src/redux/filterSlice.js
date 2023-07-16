@@ -12,11 +12,9 @@ const initialState = {
         inputValue: '',
     },
     remove: false
-    
 }
 
 const filterSlice = createSlice({
-
     name: 'filters',
     initialState,
     reducers: {

@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import style from './categories.module.scss'
 import { categoriesArr } from './categoriesArr'
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,20 +6,16 @@ import { setCategoryId, setSidebarCategory } from '../../redux/filterSlice'
 
 const Categories = () => {
 
-
-    const {categoryId} = useSelector(state => state.filter)
     const dispatch = useDispatch()
+    const { categoryId } = useSelector(state => state.filter)
     const activeCategory = (item) => {
         dispatch(setCategoryId(item))
     }
     const handleClick = (item) => {
         activeCategory(item)
-        dispatch(setSidebarCategory( {name: 'Все'}))
+        dispatch(setSidebarCategory({ name: 'Все' }))
     }
-
-
     return (
-
         <div className={style.categories}>
             <div className={style.wrapper}>
                 {categoriesArr.map((item) =>
@@ -32,7 +28,6 @@ const Categories = () => {
                 )}
             </div>
         </div>
-
     )
 }
 

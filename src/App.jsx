@@ -11,11 +11,8 @@ import { fetchPlants } from './redux/plantsSlice'
 
 const App = () => {
 
-
-
   const dispatch = useDispatch()
   const { plants } = useSelector(state => state.plants)
-
   const { categoryId, filters } = useSelector(state => state.filter)
 
   const data = async () => {

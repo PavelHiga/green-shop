@@ -1,15 +1,18 @@
-
 import { useDispatch, useSelector } from 'react-redux'
 import style from './sidebar.module.scss'
 import { setPrice, setRemoveFilters, setSidebarCategory, setSidebarCategory2, } from '../../redux/filterSlice'
-import { useState, useEffect} from 'react'
-
-
-
+import { useState, useEffect } from 'react'
 
 const Sidebar = () => {
 
     const dispatch = useDispatch()
+
+    const { categoryId } = useSelector(state => state.filter)
+    const { remove } = useSelector(state => state.filter)
+
+    const [priceActive, setPriceActive] = useState('')
+    const [activeCategory1, setActiveCategory1] = useState('')
+    const [activeCategory2, setActiveCategory2] = useState('')
 
     const priceArr = [
         { name: 'до 1000 ₽', type: { a: null, b: 1000 } },
@@ -17,18 +20,10 @@ const Sidebar = () => {
         { name: '2500 - 5000 ₽', type: { a: 2500, b: 5000 } },
         { name: 'от 5000 ₽', type: { a: 5000, b: null } }
     ]
+
     const waterArr = ['Обильный', 'Умеренный', 'Слабый']
     const countyArr = ['Россия', 'Турция', 'Грузия']
     const color = ['Черный', 'Белый']
-
-    const { categoryId } = useSelector(state => state.filter)
-    const { remove } = useSelector(state => state.filter)
-
-
-    const [priceActive, setPriceActive] = useState('')
-    const [activeCategory1, setActiveCategory1] = useState('')
-    const [activeCategory2, setActiveCategory2] = useState('')
-
 
     const onClickSidebarCategory = (value, index) => {
         dispatch(setSidebarCategory(value))
@@ -42,7 +37,7 @@ const Sidebar = () => {
     const onClickPrice = (value, index) => {
         dispatch(setPrice(value))
         setPriceActive(index)
- 
+
     }
 
     const onClickButton = () => {
@@ -54,8 +49,7 @@ const Sidebar = () => {
         setActiveCategory1(null)
         setActiveCategory2(null)
     }, [categoryId, remove])
-    
-           
+
     return (
         <div className={style.sidebar}>
             <div className={style.info}>

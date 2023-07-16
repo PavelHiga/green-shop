@@ -1,20 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux'
 import style from './sort.module.scss'
-import { setSortId, setOrderBy, setSearchValue, setInputValue} from '../../redux/filterSlice'
+import { setSortId, setOrderBy, setSearchValue, setInputValue } from '../../redux/filterSlice'
 import { useCallback, useState } from 'react'
 import debounce from 'lodash.debounce'
 
 const Sort = ({ setIsActive, isActive }) => {
-  const dispatch = useDispatch()
-  
-  const { sortId, inputValue } = useSelector(state => state.filter.filters)
-  const sortList = [
 
+  const dispatch = useDispatch()
+  const { sortId, inputValue } = useSelector(state => state.filter.filters)
+  const [isPopUpActive, setIsPopUpActive] = useState(false)
+  
+  const sortList = [
     { name: 'Популярности', sort: 'rating' },
     { name: 'Цене', sort: 'price' },
     { name: 'Названию', sort: 'title' }
   ]
-  const [isPopUpActive, setIsPopUpActive] = useState(false)
+
   const handleClickOrder = () => {
     dispatch(setOrderBy())
   }
@@ -26,22 +27,15 @@ const Sort = ({ setIsActive, isActive }) => {
     []
   )
 
-
   const onChangeInput = (value) => {
     inputChange(value)
     dispatch(setInputValue(value))
   }
 
-
-
   const handleClickSort = (value) => {
     dispatch(setSortId(value))
     setIsPopUpActive(false)
   }
-
-
-
-
 
   return (
     <div className={style.sort}>

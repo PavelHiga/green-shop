@@ -6,7 +6,6 @@
     margin-top: 20px;
     padding: 130px 0;
 
-
     .product {
         display: flex;
         max-width: 1180px;
@@ -14,7 +13,6 @@
         margin: 0 auto;
         align-items: center;
         justify-content: space-between;
-
 
         img {
             height: auto;
@@ -54,7 +52,6 @@
                 background: #f7f7f7;
             }
         }
-
     }
 
 }
@@ -80,8 +77,8 @@
 
 @media (max-width: 768px) {
     .info {
+        
         padding: 70px 0;
-
         text-align: center;
 
         .product {

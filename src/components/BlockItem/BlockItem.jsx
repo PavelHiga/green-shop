@@ -12,7 +12,6 @@ const BlockItem = ({ data }) => {
 
 
   return (
-
     <div className={style.wrapper}>
       <div className={style.item}>
         <img src={data.img} alt={data.title} />
@@ -21,7 +20,6 @@ const BlockItem = ({ data }) => {
         <button onClick={() => handleClick(data)}>В корзину</button>
       </div>
     </div>
-
   )
 }
 

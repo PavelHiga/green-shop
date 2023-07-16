@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 import Loading from '../Loading/Loading'
 
 const ShopItems = ({ plants }) => {
-  
+
   const { status } = useSelector(state => state.plants)
   const [isActive, setIsActive] = useState(true)
 
@@ -28,7 +28,7 @@ const ShopItems = ({ plants }) => {
                   }
                 </div>) : <p className={style.notfound}>Ничего не найдено 😔</p>
               )
-              :  plants.length > 0 ? (<div className={style.productsList}>
+              : plants.length > 0 ? (<div className={style.productsList}>
 
 
                 {plants.map((item, index) => <ListItem data={item} key={index} />)}
