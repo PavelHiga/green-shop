@@ -13,7 +13,7 @@ const Home = () => {
             <h3>большой выбор комнатных растений для квартиры, офиса, дома и дачи</h3>
             <Link to='/shop/cactus'><button>Каталог</button></Link>
           </div>
-          <img src="/public/assets/bg.svg" alt="" />
+          <img src="/assets/bg.svg" alt="" />
         </div>
       </div>
     </div>
