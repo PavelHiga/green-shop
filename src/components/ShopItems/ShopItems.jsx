@@ -19,21 +19,20 @@ const ShopItems = ({ plants }) => {
         <div className={style.shop}>
           <Sort isActive={isActive} setIsActive={setIsActive} />
           {status == 'error' ? <p className={style.error}>Не удалось загрузить товар 😔</p> : (
-            (isActive) ?
-              (
-                plants.length > 0 ? (<div className={style.productsBlock}>
-                  {
-                    status == 'loading' ? [...new Array(10)].map((_, index) => <Loading key={index} />) : (
-                      plants.map((item, index) => <BlockItem data={item} key={index} />))
-                  }
-                </div>) : <p className={style.notfound}>Ничего не найдено 😔</p>
-              )
-              : plants.length > 0 ? (<div className={style.productsList}>
-
-
-                {plants.map((item, index) => <ListItem data={item} key={index} />)}
-
-              </div>) : <p className={style.notfound}>Ничего не найдено 😔</p>
+            (isActive) ? (
+              <div className={style.productsBlock}>
+                {
+                  status == 'loading' ? [...new Array(10)].map((_, index) => <Loading key={index} />) : (
+                    plants.length > 0 ? plants.map((item, index) => <BlockItem data={item} key={index} />)
+                      : <p className={style.notfound}>Ничего не найдено 😔</p>)
+                }
+              </div>
+            ) : (
+              <div className={style.productsList}>
+                {plants.length > 0 ? plants.map((item, index) => <ListItem data={item} key={index} />) :
+                  <p className={style.notfound}>Ничего не найдено 😔</p>}
+              </div>
+            )
           )}
         </div>
       </div>
