@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 import CartBlock from '../../components/CartBlock/CartBlock'
 import { useDispatch, useSelector } from 'react-redux'
 import Empty from './empty/empty'
-import Items from './items/Items'
+import Items from './Items/Items'
 import { cartSelector, setClearAll } from '../../redux/cartSlice'
 import { Link } from 'react-router-dom'
 
@@ -58,8 +58,6 @@ const Cart = () => {
                     </div>
                 </>
             )}
-
-
         </div >
     )
 }
