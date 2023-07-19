@@ -43,7 +43,7 @@ const Cart = () => {
                                     <Items cart={cart} />
                                     <div className={style.bottom}>
                                         <div className={style.details}>
-                                            <span> Всего пицц: <b>{totalCount} шт.</b> </span>
+                                            <span> Всего товаров: <b>{totalCount} шт.</b> </span>
                                             <span> Сумма заказа: <b>{totalPrice} ₽</b> </span>
                                         </div>
                                         <div className={style.payWrap}>
